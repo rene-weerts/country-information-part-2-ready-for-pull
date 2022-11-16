@@ -65,28 +65,46 @@ onderstaand stappenplan gebruiken:
 
 1. Neem de documentatie van de REST Countries API goed door. Welk endpoint heb je nodig om informatie over één specifiek
    land op te halen, zoals `nederland`?
-2. Schrijf een asynchrone functie die, met behulp van Axios, een GET-request maakt naar het juiste endpoint
+2. [v2/all]
+3. Schrijf een asynchrone functie die, met behulp van Axios, een GET-request maakt naar het juiste endpoint
    voor `nederland`. Log de response in de console en bestudeer de data goed: hoe is het opgebouwd?
-3. Probeer eens om de _naam_ en _populatie_ van het land te loggen in de console. Welk pad moet je hiervoor volgen?
-4. Maak een `<article>`- of `<div>`-tag in de HTML die je als referentie kunt gebruiken in jouw JavaScript bestand;
-5. Zorg ervoor dat de _naam_ van het land weergegeven wordt in bovenstaande tag;
-6. Zorg er nu voor dat de zin `[country-naam] is situated in [subarea-name]. It has a population of [amount] people.`
-   daaronder wordt weergegeven;
-7. Zorg ervoor dat er een afbeelding van een vlag naast de naam van het land komt te staan;
-8. Schrijf een functie die, ongeacht of er één of twee valuta's gebruikt worden, eenn string teruggeeft. _Tip_: dit kun
-   je checken door bijvoorbeeld de informatie over `panama` op te halen.
-    - **1 valuta**: `and you can pay with [currency]'s`
-    - **2 valuta's**: `and you can pay with [currency]'s and [currency]'s`
-9. Gebruik deze functie de correcte zin, `The capital is [city] and you can pay with [currency] and [currency]'s` weer
-   te geven.
-10. Maak een inputveld met zoek-knop op de pagina. In plaats van dat de data wordt opgehaald wanneer de pagina laadt,
+4. [01.We schrijven een Asynchrone functie om de response van de back-end binnen te krijgen.]
+5. [We maken een try-catch blok.]
+6. [We maken een await en een axios.get request en maken daarvan een variabele const.]
+7. [We destructuren de URI en maken er 2 variabelen van en passen de URI in get request daarop aan.]
+8. Probeer eens om de _naam_ en _populatie_ van het land te loggen in de console. Welk pad moet je hiervoor volgen?
+9. [02.We maken een variabele en gebruiken de find-methode voor naam... aan de naam zit een array met verdere data.]
+10. [We schrijven een variabele die en gebruiken de array van naam om de polulatie op te vragen. ]
+11. [we maken gebruik van de array uit de response van ons get request uit onze a-sync-funtion.]
+12. Maak een `<article>`- of `<div>`-tag in de HTML die je als referentie kunt gebruiken in jouw JavaScript bestand;
+13. [03.Op onze html pagina gebruiken we  <ul id="countryDetails"></ul> met een id om aan te spreken in js.]
+14. Zorg ervoor dat de _naam_ van het land weergegeven wordt in bovenstaande tag;
+15. Zorg er nu voor dat de zin `[country-naam] is situated in [subarea-name]. It has a population of [amount] people.`
+    daaronder wordt weergegeven;
+16. [04.We voegen aan onze variabele listCountryNamen het element innerHTML toe om alles zichtbaar te maken op onze html-pagina
+    We maken een list tag met er voor en achter back-ticks
+    We zetten tussen onze list tag alle elementen die we nodig hebben om onze data in te zetten
+    We gebruiken de volgende elementen input/img/h3/p en zetten er de benodigde class en id en type attributen in
+    We maken de juiste template literal op de juiste plaats om onze gegevens te injecteren]
+17. Zorg ervoor dat er een afbeelding van een vlag naast de naam van het land komt te staan;
+18. [05.Dit doen we in ons css bestand met flexbox.]
+19. Schrijf een functie die, ongeacht of er één of twee valuta's gebruikt worden, eenn string teruggeeft. _Tip_: dit kun
+    je checken door bijvoorbeeld de informatie over `panama` op te halen.
+     - **1 valuta**: `and you can pay with [currency]'s`
+     - **2 valuta's**: `and you can pay with [currency]'s and [currency]'s`
+    [06.We maken een fuctie die we met een if statement of 1 of 2 valuta's laten returnen]
+20. Gebruik deze functie de correcte zin, `The capital is [city] and you can pay with [currency] and [currency]'s` weer
+    te geven.
+21. Maak een inputveld met zoek-knop op de pagina. In plaats van dat de data wordt opgehaald wanneer de pagina laadt,
     zorg je er nu voor dat de data over Nederland pas wordt opgehaald wanneer de gebruiker op ENTER of 'Zoek' drukt;
-11. Zorg ervoor dat de waarde uit het inputveld wordt gebruikt als dynamische waarde in jouw GET-request;
-12. Zorg ervoor dat de waarde van het input veld wordt leeggemaakt na elke zoekopdracht en dat er altijd maar één
+22. [07.Iputfield en button op html pagina gemaakt. De data wordt ]
+23. Zorg ervoor dat de waarde uit het inputveld wordt gebruikt als dynamische waarde in jouw GET-request;
+24. [08.]
+25. Zorg ervoor dat de waarde van het input veld wordt leeggemaakt na elke zoekopdracht en dat er altijd maar één
     zoekresultaat op de pagina staat;
-13. Zorg ervoor dat als er naar een land wordt gezocht dat niet bestaat, er een foutmelding wordt getoond. _Tip_: als er
+26. Zorg ervoor dat als er naar een land wordt gezocht dat niet bestaat, er een foutmelding wordt getoond. _Tip_: als er
     een ongeldige API call wordt gemaakt, zal de response in het catch blok terecht komen.
-14. Zorg er ook voor dat wanneer er daarna een geldig verzoek wordt gedaan, de foutmelding weer verdwenen is.
+27. Zorg er ook voor dat wanneer er daarna een geldig verzoek wordt gedaan, de foutmelding weer verdwenen is.
 
 ## Bonusopdrachten
 

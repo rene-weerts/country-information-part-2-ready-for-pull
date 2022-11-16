@@ -1,0 +1,54 @@
+article, ul {
+  flex-direction: column;
+  display: flex;
+}
+
+.field-button-container {
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+}
+
+.search-data-field {
+  text-align: left;
+  width: 400px;
+  height: 30px;
+  flex-direction: row;
+  margin-left: 40px;
+  display: flex;
+}
+
+.flag-name-container {
+  flex-direction: row;
+  display: flex;
+}
+
+h3 {
+  font-size: xxx-large;
+}
+
+p {
+  font-size: large;
+}
+
+.search-button {
+  text-transform: uppercase;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  font-size: large;
+  display: flex;
+}
+
+.list-items {
+  list-style: none;
+}
+
+.image {
+  width: 220px;
+  border: 1px solid;
+  margin-left: 40px;
+}
+
+/*# sourceMappingURL=index.4d663569.css.map */

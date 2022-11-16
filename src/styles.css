@@ -1,4 +1,50 @@
+article {
+    display: flex;
+    flex-direction: column;
 
-.hello {
-    color:red;
+}
+ul {
+    display: flex;
+    flex-direction: column;
+}
+.field-button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.search-data-field {
+    margin-left: 40px;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    width: 400px;
+    height: 30px;
+}
+.flag-name-container {
+    display: flex;
+    flex-direction: row;
+
+}
+h3 {
+    font-size: xxx-large;
+}
+p {
+    font-size: large;
+}
+.search-button {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-transform:uppercase;
+    font-size: large;
+}
+.list-items {
+    list-style: none;
+}
+.image {
+    width: 220px;
+    margin-left: 40px;
+    border: 1px solid;
 }
