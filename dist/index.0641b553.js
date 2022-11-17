@@ -533,89 +533,44 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"bNKaB":[function(require,module,exports) {
 //- Kijken of alles goed gekoppeld is met console.log
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+// console.log("Welkom");
 //- Hiermee koppelen we ons app.js bestand aan package.json en axios
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-console.log("Welkom");
-//-01
+function handleField(e) {
+    e.preventDefault();
+    fetchCountryInformation(inputField.value);
+}
+const inputField = document.getElementById("search-field");
+inputField.addEventListener("keyup", (e)=>e.keyCode === 13);
+const button = document.getElementById("search-button");
+button.addEventListener("submit", handleField);
+const signInForm = document.getElementById("sign-in-form");
+signInForm.addEventListener("submit", handleField);
 async function fetchCountryInformation() {
     const BASE_URI = "https://restcountries.com/";
-    const ENDPOINT = "v2/all";
+    const ENDPOINT = `v2/name/${inputField.value}`;
     try {
         const response = await (0, _axiosDefault.default).get(BASE_URI + ENDPOINT);
-        //-02
-        const countryByName = response.data.find((oneCountry)=>{
-            return oneCountry.name === "Panama";
-        });
-        console.log(countryByName);
-        const countryByPopulation = countryByName.population;
-        console.log(countryByPopulation);
-        //-06.
-        //         const currencyInfo = {
-        //             if (countryByName.currencies.length === countryByName.currencies.length){
-        //             return `and you can pay with ${countryByName.currencies[0]}'s`
-        //         }
-        //             if (countryByName.currencies[1] === countryByName.currencies[1]){
-        //             return `and you can pay with ${countryByName.currencies[0]}'s and ${countryByName.currencies[1]}'s`
-        //         }
-        //         }
-        //- We gaan een variable maken die een functie heeft waarmee we door onze data kunnen itereren
-        //- Met de find methode halen we de data per land op uit de array van response
-        //- De return functie zoekt de array af tot hij dezelfde naam vind
-        // console.log(countryByName)
-        //- We maken een variabele const van het zoekveld en gebruiken deze in onze return functie
-        // - Om een event-listner op ons button-elemnet te plaatsen hebben we een functie nodig die wordt afgevuurd als je er op klikt
-        function handleClick() {
-        // console.log("Ik wil een zoekbalk")
-        }
-        //- Om deze functie te koppelen moeten we eerst een variabele maken met getElementById zodat we deze kunnen aanspreken
-        const button = document.getElementById("search-button");
-        //- Nu we toegang hebben op ons button-element kunnen we er een eventlistner op plaatsen
-        //- Deze verwacht 2 argumenten (1 het type event) (2 De functie die wordt afgevuurd)
-        //- Let op!!!!! Je geeft alleen de functie naam mee. Dus zonder haakjes () !!!!!
-        //- Mocht je parameters nodig hebben schrijf dan een anonieme functie waar je deze in zet
-        //- Deze ziet er dan zo uit (type:"click", () => { handleClick ("Nova", "21" );});
-        button.addEventListener("click", handleClick);
-        //- Om een event-listner op ons zoekveld te plaatsen hebben we een functie nodig
-        //- Om te registreren wat ingetoetst wordt hebben we het event-object nodig (e)
-        //- Daarmee ontvangen we alle data
-        function handleField(e) {
-            const currentValue = e.target.value;
-            console.log(`In het invoerveld is ingevuld ${currentValue}`);
-        }
-        //- Om deze functie te koppelen moeten we eerst een variabele maken met getElementById zodat we deze kunnen aanspreken
-        const field = document.getElementById("search-field");
-        //- Nu we toegan hebben tot ons input-element kunnen we er een event-listner op plaatsen
-        //- Deze verwacht 2 argumenten (1 Het type event)(2 De functie die wordt afgevuurd)
-        field.addEventListener("keyup", handleField);
-        //- Dit doen we ook allemaal op het formulier zelf zodat we ook enter kunnen gebruiken
-        //- Dat kan alleen maar als we onze button geen click-event meegeven () !!!
-        //- In plaats daarvan zetten we op het formulier een submit-event de button moet als type="submit" hebben anders wertkt dit niet
-        //- Om de methode prevent-default te gebruiken moeten we zorgen dat onze functie het event-object ontvangt (e)
-        //- Vervolgens hebben we toegang tot e.preventDefault()
-        function handleSubmit(e) {
-            e.preventDefault();
-            console.log("Het formulier wordt verzonden\uD83E\uDD73");
-        }
-        const signInForm = document.getElementById("sign-in-form");
-        signInForm.addEventListener("submit", handleSubmit);
-        //-03.
-        const listCountryName = document.getElementById("countryDetails");
-        listCountryName.innerHTML = ` <li class="list-items">
-                     <div class="flag-name-container">
-                     <h3>${countryByName.name}</h3>
-                     <img class="image" src="${countryByName.flags.svg}" alt="${countryByName.name}">
-                     </div>
-                     <p>${countryByName.name} is situated in ${countryByName.subregion}.
-                     <p>It has a population of ${countryByName.population} people.</p>
-                     <p>The capital is ${countryByName.capital} </p>
-              </li>`;
+        const dataArray = response.data;
+        let currenciesCountry = "";
+        for(let i = 0; i < dataArray[0].currencies.length; i++)if (dataArray[0].currencies.length === 1 || i === dataArray[0].currencies.length - 2) currenciesCountry += `you can pay with ${dataArray[0].currencies[i].name}'s. `;
+        else currenciesCountry += `and ${dataArray[0].currencies[i].name}'s.`;
+        const countryInfoText = document.getElementById("countryDetails");
+        countryInfoText.innerHTML = `
+<div class="country-flag-container">
+<h3>${dataArray[0].name} </h3>
+<img src="${dataArray[0].flag}" alt="Vlag van ${dataArray[0].name}" class="image" />
+</div>
+<p> ${dataArray[0].name}  is situated in ${dataArray[0].subregion}. </p>
+<p>It has a population of ${dataArray[0].population}  people.</p>
+<p>${currenciesCountry}</p>
+`;
     } catch (error) {
         console.error(error);
     }
 }
-fetchCountryInformation();
 
 },{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

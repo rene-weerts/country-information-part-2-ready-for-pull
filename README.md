@@ -65,7 +65,7 @@ onderstaand stappenplan gebruiken:
 
 1. Neem de documentatie van de REST Countries API goed door. Welk endpoint heb je nodig om informatie over één specifiek
    land op te halen, zoals `nederland`?
-2. [v2/all]
+2. [v2/name/{name} ]
 3. Schrijf een asynchrone functie die, met behulp van Axios, een GET-request maakt naar het juiste endpoint
    voor `nederland`. Log de response in de console en bestudeer de data goed: hoe is het opgebouwd?
 4. [01.We schrijven een Asynchrone functie om de response van de back-end binnen te krijgen.]
@@ -97,7 +97,7 @@ onderstaand stappenplan gebruiken:
     te geven.
 21. Maak een inputveld met zoek-knop op de pagina. In plaats van dat de data wordt opgehaald wanneer de pagina laadt,
     zorg je er nu voor dat de data over Nederland pas wordt opgehaald wanneer de gebruiker op ENTER of 'Zoek' drukt;
-22. [07.Iputfield en button op html pagina gemaakt. De data wordt ]
+22. [07.Inputfield en button op html pagina gemaakt. De data wordt ]
 23. Zorg ervoor dat de waarde uit het inputveld wordt gebruikt als dynamische waarde in jouw GET-request;
 24. [08.]
 25. Zorg ervoor dat de waarde van het input veld wordt leeggemaakt na elke zoekopdracht en dat er altijd maar één
