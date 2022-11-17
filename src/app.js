@@ -1,5 +1,6 @@
 //- Kijken of alles goed gekoppeld is met console.log
 // console.log("Welkom");
+
 //- Hiermee koppelen we ons app.js bestand aan package.json en axios
 import axios from "axios" ;
 
