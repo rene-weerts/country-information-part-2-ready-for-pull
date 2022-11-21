@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Roboto+Condensed:wght@300&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+.field-button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 30px;
+}
+.search-data-field {
+    margin-left: 40px;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    width: 400px;
+    height: 30px;
+    font-size: large;
+}
+::placeholder {
+    font-size: medium;
+    text-transform: full-size-kana ;
+    color: red;
+    opacity: 0.5 ;
+}
+.search-button {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-transform:uppercase;
+    font-size: large;
+}
+article {}
+.country-flag-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+h3 {
+    font-size: xx-large;
+    margin-left: 40px;
+}
+.image {
+    width: 220px;
+    margin-top: 20px;
+    margin-left: 40px;
+    border: 1px solid;
+}
+p {
+    font-size: x-large;
+    margin-left: 40px;
+}
+
+
+
